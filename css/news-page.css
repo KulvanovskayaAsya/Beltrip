@@ -1,0 +1,42 @@
+.news-navbar {
+    font: 20px/1 'Raleway';
+    max-width: 1200px;
+    padding: 0.5rem;
+    margin: 0 auto 3.5rem;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background-color: var(--surface-color);
+}
+
+.news-navbar__menu {
+    overflow: auto;
+}
+
+.news-navbar__item {
+    flex-shrink: 0;
+}
+
+.news-navbar__navlink {
+    padding: 1.5rem 1rem;
+}
+
+.news-navbar__navlink_active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.news-navbar__navlink:hover {
+    text-shadow: 0.35px 0 var(--primary-color), -0.35px 0 var(--primary-color), 0 -0.35px var(--primary-color), 0 0.35px var(--primary-color);
+}
+
+.news-navbar__navlink_active:hover {
+    text-shadow: none;
+}
+
+@media(max-width: 768px) {
+    .news-navbar__menu {
+        font-size: 20px;
+        margin: 0;
+        flex-direction: row;
+    }
+}

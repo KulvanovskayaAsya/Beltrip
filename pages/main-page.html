@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beltrip</title>
+    <link href="../css/normilize.css" rel="stylesheet" type="text/css">
+    <link href="../css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="../assets/libs/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/main-page.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header-container">
+        <header class="header">
+            <a class="header__logo" href="main-page.html">
+                <img src="../assets/logo.svg" alt="Логотип сайта">
+            </a>
+            <nav class="header__navbar navbar">
+                <ul class="navbar__menu">
+                    <li class="navbar__item navbar__item-with-submenu">
+                        <span class="navbar__navlink">Туры</span>
+
+                        <ul class="navbar__submenu">
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Все туры</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 2 дня</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 3 дня</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 4 дня</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="catalog-page.html">Экскурсии</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="transfer-page.html">Трансфер</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="news-page.html">Новости</a>
+                    </li>
+                    <li class="navbar__item navbar__item-with-submenu">
+                        <span class="navbar__navlink">О компании</span>
+                        <ul class="navbar__submenu">
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">О нас</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Реквизиты</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Пример договора</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Для иностранных <br> граждан</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <label class="switcher">
+                <input type="checkbox" class="switcher__control">
+                <span class="switcher__icon"></span>
+            </label>
+
+            <div class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+    </div>
+    <main class="page">
+        <div class="main-slider-container">
+            <div class="main-slider slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide main-slider__slide slider__slide">
+                        <img class="main-slider__img slider__img" src="../assets/images/slider-image-1.jpg" alt="Belarus landscape. The first image of primary banner">
+                    </div>
+                    <div class="swiper-slide main-slider__slide slider__slide">
+                        <img class="main-slider__img slider__img" src="../assets/images/slider-image-2.jpg" alt="Belarus landscape. The second image of primary banner">
+                    </div>
+                    <div class="swiper-slide main-slider__slide slider__slide">
+                        <img class="main-slider__img slider__img" src="../assets/images/slider-image-3.jpg" alt="Belarus landscape. The third image of primary banner">
+                    </div>
+                    <div class="swiper-slide main-slider__slide slider__slide">
+                        <img class="main-slider__img slider__img" src="../assets/images/slider-image-4.jpg" alt="Belarus landscape. The third image of primary banner">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <div class="main-slider__banner">
+                <h1 class="main-slider__heading">Продающий текст, выполняющий роль заголовка H1</h1>
+                <!-- TODO: Add action -->
+                <form class="form search-form" name="tours-filter" action="" method="get" autocomplete="off">
+                    <select class="form__field form__field_cities" name="cities" multiple>
+                        <option value="Minsk">Минск</option>
+                        <option value="Brest">Брест</option>
+                        <option value="Grodno">Гродно</option>
+                        <option value="Vitebsk">Витебск</option>
+                        <option value="Polotsk">Полоцк</option>
+                        <option value="Mogilev">Могилёв</option>
+                        <option value="Bobruisk">Бобруйск</option>
+                        <option value="Gomel">Гомель</option>
+                    </select>
+                    <div class="search-form__flex-bottom">
+                        <div class="form__field_calendar">
+                            <input class="form__field" type="text" name="daterange" value="" placeholder="Дата" />
+                            <i class="form__field_calendar-icon"></i>
+                        </div>
+                        <button class="btn btn_secondary" type="submit">Поиск</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Tours section -->
+        <section class="primary-section">
+            <h2 class="primary-section__title">Популярные туры</h2>
+            <div class="primary-section__cards-container">
+                <article class="card">
+                    <a href="tour-page.html">
+                        <img class="card__img" src="../assets/images/tour-card.jpg">
+                    </a>
+                    <a href="tour-page.html">
+                        <h3 class="card__title">
+                            Название тура
+                        </h3>
+                        <p class="card__text">
+                            Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями Минска и окрестностей. Вы
+                            также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси, ее культурой и
+                            бытом, посетите культовые места Юнеско и королевский город Гродно
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>3 дня</span>
+                        <span>1000р</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="tour-page.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="tour-page.html">
+                        <img class="card__img" src="https://picsum.photos/600/400">
+                    </a>
+                    <a href="tour-page.html">
+                        <h3 class="card__title">
+                            Название тура
+                        </h3>
+                        <p class="card__text">
+                            Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями Минска и окрестностей. Вы
+                            также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси, ее культурой и
+                            бытом, посетите культовые места Юнеско и королевский город Гродно
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>3 дня</span>
+                        <span>1000р</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="tour-page.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="tour-page.html">
+                        <img class="card__img" src="../assets/images/tour-card.jpg">
+                    </a>
+                    <a href="tour-page.html">
+                        <h3 class="card__title">
+                            Название тура
+                        </h3>
+                        <p class="card__text">
+                            Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями Минска и окрестностей. Вы
+                            также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси, ее культурой и
+                            бытом, посетите культовые места Юнеско и королевский город Гродно
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>3 дня</span>
+                        <span>1000р</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="tour-page.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="tour-page.html">
+                        <img class="card__img" src="https://picsum.photos/600/400">
+                    </a>
+                    <a href="tour-page.html">
+                        <h3 class="card__title">
+                            Название тура
+                        </h3>
+                        <p class="card__text">
+                            Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями Минска и окрестностей. Вы
+                            также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси, ее культурой и
+                            бытом, посетите культовые места Юнеско и королевский город Гродно
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>3 дня</span>
+                        <span>1000р</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="tour-page.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <a class="primary-section__btn btn btn_secondary" href="catalog-page.html">Смотреть все туры</a>
+        </section>
+        <!-- /Tours section -->
+        <!--Advantages Section-->
+        <section class="secondary-section">
+            <h2 class="secondary-section__title visually-hidden">Что мы можем предложить?</h2>
+    
+            <div class="advantages-slider">
+                <div class="advantages-slider__main">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide advantages-slider__slide">
+                            <img class="advantages-slider__img" src="../assets/icons/people.svg" alt="Feature text">
+                        </div>
+                        <div class="swiper-slide advantages-slider__slide">
+                            <img class="advantages-slider__img" src="../assets/icons/palace.svg" alt="Feature text">
+                        </div>
+                        <div class="swiper-slide advantages-slider__slide">
+                            <img class="advantages-slider__img" src="../assets/icons/city.svg" alt="Feature text">
+                        </div>
+                        <div class="swiper-slide advantages-slider__slide">
+                            <img class="advantages-slider__img" src="../assets/icons/lake.svg" alt="Feature text">
+                        </div>
+                    </div>
+                </div>
+                <div class="advantages-slider__thumbs">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide advantages-slider__slide">
+                            <span class="advantages-slider__number">1</span>
+                            <div class="flex_vertical">
+                                <h3 class="advantages-slider__subtitle secondary-section__subtitle">Уникальные программы</h3>
+                                <p class="advantages-slider__text">Возможно создание туристических и экскурсионных программ с нуля по вашему заказу</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide advantages-slider__slide">
+                            <span class="advantages-slider__number">2</span>
+                            <div class="flex_vertical">
+                                <h3 class="advantages-slider__subtitle secondary-section__subtitle">Уникальные программы</h3>
+                                <p class="advantages-slider__text">Возможно создание туристических и экскурсионных программ с нуля по вашему заказу</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide advantages-slider__slide">
+                            <span class="advantages-slider__number">3</span>
+                            <div class="flex_vertical">
+                                <h3 class="advantages-slider__subtitle secondary-section__subtitle">Уникальные программы</h3>
+                                <p class="advantages-slider__text">Возможно создание туристических и экскурсионных программ с нуля по вашему заказу</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide advantages-slider__slide">
+                            <span class="advantages-slider__number">4</span>
+                            <div class="flex_vertical">
+                                <h3 class="advantages-slider__subtitle secondary-section__subtitle">Уникальные программы</h3>
+                                <p class="advantages-slider__text">Возможно создание туристических и экскурсионных программ с нуля по вашему заказу</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/Advantages Section-->
+        <!-- Execursion section -->
+        <section class="primary-section">
+            <h2 class="primary-section__title">Популярные экскурсии</h2>
+            <div class="primary-section__cards-container">
+                <article class="card">
+                    <a href="tour-page.html">
+                        <img class="card__img" src="../assets/images/tour-card.jpg">
+                    </a>
+                    <a href="tour-page.html">
+                        <h3 class="card__title">
+                            Название экскурсии
+                        </h3>
+                        <p class="card__text">
+                            Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями Минска и окрестностей. Вы
+                            также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси, ее культурой и
+                            бытом, посетите культовые места Юнеско и королевский город Гродно
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>1000р</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="tour-page.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="tour-page.html">
+                        <img class="card__img" src="../assets/images/tour-card.jpg">
+                    </a>
+                    <a href="tour-page.html">
+                        <h3 class="card__title">
+                            Название экскурсии
+                        </h3>
+                        <p class="card__text">
+                            Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями Минска и окрестностей. Вы
+                            также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси, ее культурой и
+                            бытом, посетите культовые места Юнеско и королевский город Гродно
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>1000р</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="tour-page.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="tour-page.html">
+                        <img class="card__img" src="../assets/images/tour-card.jpg">
+                    </a>
+                    <a href="tour-page.html">
+                        <h3 class="card__title">
+                            Название экскурсии
+                        </h3>
+                        <p class="card__text">
+                            Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями Минска и окрестностей. Вы
+                            также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси, ее культурой и
+                            бытом, посетите культовые места Юнеско и королевский город Гродно
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>1000р</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="tour-page.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="tour-page.html">
+                        <img class="card__img" src="../assets/images/tour-card.jpg">
+                    </a>
+                    <a href="tour-page.html">
+                        <h3 class="card__title">
+                            Название экскурсии
+                        </h3>
+                        <p class="card__text">
+                            Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями Минска и окрестностей. Вы
+                            также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси, ее культурой и
+                            бытом, посетите культовые места Юнеско и королевский город Гродно
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>1000р</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="tour-page.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <a class="primary-section__btn btn btn_secondary" href="catalog-page.html">Смотреть все экскурсии</a>
+        </section>
+        <!-- /Execursion section -->
+        <!--Why Belarus Section-->
+        <section class="secondary-section why-belarus">
+            <div class="why-belarus-slider">
+                <div class="why-belarus-slider__thumbs">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="https://picsum.photos/800/1280" alt="">
+                            </div>
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="../assets/images/slider-image-2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="https://picsum.photos/1920/1082" alt="">
+                            </div>
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="https://picsum.photos/1920/1083" alt="">
+                            </div>
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="https://picsum.photos/1920/1084" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="why-belarus-slider__main">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="https://picsum.photos/800/1280" alt="">
+                            </div>
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="../assets/images/slider-image-2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="https://picsum.photos/1920/1082" alt="">
+                            </div>
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="https://picsum.photos/1920/1083" alt="">
+                            </div>
+                            <div class="swiper-slide why-belarus-slider__slide">
+                                <img src="https://picsum.photos/1920/1084" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why-belarus__content">
+                <h2 class="secondary-section__title">Почему стоит выбрать Беларусь для путешествий?</h2>
+                <div class="why-belarus__features">
+                    <article class="why-belarus__feature feature">
+                        <div class="feature__heading">
+                            <img class="feature__icon" src="../assets/icons/city.svg" alt="City Icon">
+                            <h3 class="secondary-section__subtitle">Разнообразная архитектура</h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </article>
+                    <article class="why-belarus__feature feature">
+                        <div class="feature__heading">
+                            <img class="feature__icon" src="../assets/icons/city.svg" alt="City Icon">
+                            <h3 class="secondary-section__subtitle">Разнообразная архитектура</h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </article>
+                    <article class="why-belarus__feature feature">
+                        <div class="feature__heading">
+                            <img class="feature__icon" src="../assets/icons/city.svg" alt="City Icon">
+                            <h3 class="secondary-section__subtitle">Разнообразная архитектура</h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </article>
+                    <article class="why-belarus__feature feature">
+                        <div class="feature__heading">
+                            <img class="feature__icon" src="../assets/icons/city.svg" alt="City Icon">
+                            <h3 class="secondary-section__subtitle">Разнообразная архитектура</h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!--/Why Belarus Section-->
+        <!-- Transfer section -->
+        <section class="primary-section">
+            <h2 class="primary-section__title">Трансфер</h2>
+            <div class="primary-section__cards-container">
+                <article class="card">
+                    <a href="transfer-page.html">
+                        <img class="card__img" src="../assets/images/bus.jpg">
+                    </a>
+                    <a href="transfer-page.html.html">
+                        <h3 class="card__title">
+                            Автобус
+                        </h3>
+                        <p class="card__text">
+                            Доступные для заказа модели: <br>
+                            - Название<br>
+                            - Название<br>
+                            - Название<br>
+                            - Название
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>от 30р/час</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="transfer-page.html.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="transfer-page.html">
+                        <img class="card__img" src="../assets/images/minibus.jpg">
+                    </a>
+                    <a href="transfer-page.html.html">
+                        <h3 class="card__title">
+                            Микроавтобус
+                        </h3>
+                        <p class="card__text">
+                            Доступные для заказа модели: <br>
+                            - Название<br>
+                            - Название<br>
+                            - Название<br>
+                            - Название
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>от 30р/час</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="transfer-page.html.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <a href="transfer-page.html">
+                        <img class="card__img" src="../assets/images/car.jpg">
+                    </a>
+                    <a href="transfer-page.html.html">
+                        <h3 class="card__title">
+                            Автомобиль
+                        </h3>
+                        <p class="card__text">
+                            Доступные для заказа модели: <br>
+                            - Название<br>
+                            - Название<br>
+                            - Название<br>
+                            - Название
+                        </p>
+                    </a>
+                    <div class="card__price-info">
+                        <span>от 30р/час</span>
+                    </div>
+                    <div class="card__bottom">
+                        <button class="card__btn btn btn_primary" type="button">
+                            <span>Забронировать</span>
+                        </button>
+                        <a href="transfer-page.html.html">
+                            <svg class="card__icon" viewBox="0 0 28 25">
+                                <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <a class="primary-section__btn btn btn_secondary" href="catalog-page.html">Смотреть все экскурсии</a>
+        </section>
+        <!-- /Transfer section -->
+        <!--News Section-->
+        <section class="primary-section news">
+            <h2 class="primary-section__title">Новости</h2>
+        
+            <div class="primary-section__cards-container">
+                <article class="card">
+                    <a href="text-page.html">
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="../assets/images/slider-image-1.jpg" alt="Image for 'News heading'">
+                            <span class="card__date">19, Dec</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                            <p class="card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                            </p>
+                        </div>
+                    </a>
+                </article>
+        
+                <div class="horizontal-news-wrapper">
+                    <article class="card card_horizontal">
+                        <a href="text-page.html">
+                            <div class="card__img-wrapper">
+                                <img class="card__img" src="../assets/images/slider-image-3.jpg" alt="Image for 'News heading'">
+                                <span class="card__date">19, Dec</span>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                                <p class="card__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+        
+                    <article class="card card_horizontal">
+                        <a href="text-page.html">
+                            <div class="card__img-wrapper">
+                                <img class="card__img" src="https://picsum.photos/300/600" alt="Image for 'News heading'">
+                                <span class="card__date">19, Dec</span>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                                <p class="card__text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        
+            <a class="primary-section__btn btn btn_secondary" href="news-page.html">Перейти ко всем новостям</a>
+        </section>
+        <!--/News Section-->
+        <!--Recalls Section-->
+        <section class="primary-section">
+            <h2 class="primary-section__title">Отзывы</h2>
+            <div class="recalls-slider-wrapper">
+                <div class="recalls-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide recalls-slider__slide">
+                            <div class="recalls-slider__slide-wrapper">
+                                <span class="recalls-slider__slide__name">Имя</span>
+                                <p class="recalls-slider__slide__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                    et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.
+                                </p>
+                                <span class="recalls-slider__slide__date">Дата: 20.01.2022</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide recalls-slider__slide">
+                            <div class="recalls-slider__slide-wrapper">
+                                <span class="recalls-slider__slide__name">Имя</span>
+                                <p class="recalls-slider__slide__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                    et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.
+                                </p>
+                                <span class="recalls-slider__slide__date">Дата: 20.01.2022</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide recalls-slider__slide">
+                            <div class="recalls-slider__slide-wrapper">
+                                <span class="recalls-slider__slide__name">Имя</span>
+                                <p class="recalls-slider__slide__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                    et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.
+                                </p>
+                                <span class="recalls-slider__slide__date">Дата: 20.01.2022</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide recalls-slider__slide">
+                            <div class="recalls-slider__slide-wrapper">
+                                <span class="recalls-slider__slide__name">Имя</span>
+                                <p class="recalls-slider__slide__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                    et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.
+                                </p>
+                                <span class="recalls-slider__slide__date">Дата: 20.01.2022</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide recalls-slider__slide">
+                            <div class="recalls-slider__slide-wrapper">
+                                <span class="recalls-slider__slide__name">Имя</span>
+                                <p class="recalls-slider__slide__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                    et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.
+                                </p>
+                                <span class="recalls-slider__slide__date">Дата: 20.01.2022</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide recalls-slider__slide">
+                            <div class="recalls-slider__slide-wrapper">
+                                <span class="recalls-slider__slide__name">Имя</span>
+                                <p class="recalls-slider__slide__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                    et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.
+                                </p>
+                                <span class="recalls-slider__slide__date">Дата: 20.01.2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="recalls-slider__btn recalls-slider__btn_prev"></button>
+                <button class="recalls-slider__btn recalls-slider__btn_next"></button>
+            </div>
+            <a class="primary-section__btn btn btn_secondary" href="">Оставить отзыв</a>
+        </section>
+        <!--/Recalls Section-->
+        <!--Contacts Section-->
+        <section class="primary-section">
+            <div class="primary-section__content primary-section__content_contact">
+                <!-- TODO: Add action -->
+                <form class="form contact-form" name="contact-form" action="" method="post" autocomplete="on">
+                    <input class="form__field" type="text" name="name" placeholder="Имя">
+                    <input class="form__field" type="tel" name="phone" placeholder="Номер телефона">
+                    <input class="form__field" type="email" name="email" placeholder="Почта">
+                    <textarea class="form__field" name="name" placeholder="Сообщение" spellcheck="true" rows="5"></textarea>
+                    <div class="contact-form__checboxes-wrapper">
+                        <label class="form__field_label">
+                            <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                            <span class="form__field_checkbox"></span>
+                            Я хочу получать e-mail рассылку от “БЕЛТРИП”
+                        </label>
+                        <label class="form__field_label">
+                            <input class="form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing">
+                            <span class="form__field_checkbox"></span>
+                            Я согласен(-на) с <a href="#"> политикой конфиденциальности</a>
+                        </label>
+                    </div>
+                    <button class="primary-section__btn contact-form__btn btn btn_secondary" type="submit">Отправить</button>
+                </form>
+                <div class="contact-info-wrapper">
+                    <div class="contact-info">
+                        <h2 class="contact-info__title">
+                            Остались вопросы?
+                            Свяжитесь с нами!
+                        </h2>
+                        <p class="contact-info__text">
+                            Вы можете позвонить нам, связаться в социальных сетях,
+                            отправить письмо на почту или оставить заявку в форме
+                        </p>
+                        <ul class="contacts-list">
+                            <li class="contacts-list__item contacts-list__item_mail">
+                                post@mail.ru
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_inst">
+                                _beltrip_
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_telegram">
+                                _beltrip_
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_phone">
+                                +375 (29) 11 11 111
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_whatsapp">
+                                +375 (29) 11 11 111
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_viber">
+                                +375 (29) 11 11 111
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/Contacts Section-->
+    </main>
+
+    <footer class="footer">
+        <a class="logo footer__logo" href="main-page.html">
+            <img src="../assets/logo-footer.svg" alt="Логотип сайта">
+        </a>
+        <nav class="footer__navbar navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="catalog-page.html">Туры</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="catalog-page.html">Экскурсии</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="transfer-page.html">Трансфер</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="news-page.html">Новости</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="text-page.html">Реквизиты</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="text-page.html">Пример договора</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+    
+    <script src="../assets/libs/jquery-3.6.4.min.js"></script>
+    <script src="../assets/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/main-page.js"></script>
+</body>

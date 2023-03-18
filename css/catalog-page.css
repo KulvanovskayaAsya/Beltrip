@@ -1,0 +1,135 @@
+.filter-page__content-container {
+    max-width: 1200px;
+    margin: 0 auto 0;
+    display: flex;
+    align-items: start;
+}
+
+.filter-show-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.filter-show-btn::before {
+    content: '';
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+    background: url('../assets/icons/settings.svg') center/contain;
+}
+
+.filter {
+    top: 2rem;
+    bottom: 2rem;
+    height: 94vh;
+    margin-right: 2rem;
+}
+
+.filter__title {
+    margin-block-start: 0;
+    font-size: 1.75rem;
+}
+
+.filter__form {
+    flex-direction: column;
+}
+
+.filter__field {
+    width: 100%;
+}
+
+.filter__btn {
+    width: 100%;
+}
+
+.filter-clear-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    font-size: 1rem;
+}
+
+.filter-clear-btn::before {
+    content: '';
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.25rem;
+    background: url('../assets/icons/cross.svg') center/contain;
+}
+
+.form__field {
+    width: 100%;
+}
+
+.form__field_calendar {
+    flex-grow: 1;
+}
+
+.selectMultiple_cities {
+    margin-top: 3rem;
+}
+
+.selectMultiple_types {
+    z-index: 9;
+}
+
+.selectMultiple::before {
+    bottom: 0.75rem;
+}
+
+.card {
+    width: calc((100% - 2rem) / 2);
+}
+
+@media(max-width:1232px) {
+    .filter-page__content-container {
+        margin: 0 1.5rem;
+    }
+
+    .filter-page__catalog {
+        margin-left: 0;
+    }
+}
+
+@media(max-width:1000px) {
+    .filter {
+        width: 35%;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+@media(max-width:768px) {
+    .filter-page__content-container {
+        flex-direction: column;
+    }
+
+    .filter-page__catalog {
+        margin: 0;
+    }
+
+    .filter-show-btn {
+        display: flex;
+    }    
+
+    .filter {
+        display: none;
+        height: auto;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+        position: inherit;
+    }
+
+    .filter_open {
+        display: block;
+    }
+}

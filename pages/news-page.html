@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beltrip</title>
+    <link href="../css/normilize.css" rel="stylesheet" type="text/css">
+    <link href="../css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="../assets/libs/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/news-page.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header-container">
+        <header class="header">
+            <a class="header__logo" href="main-page.html">
+                <img src="../assets/logo.svg" alt="Логотип сайта">
+            </a>
+            <nav class="header__navbar navbar">
+                <ul class="navbar__menu">
+                    <li class="navbar__item navbar__item-with-submenu">
+                        <span class="navbar__navlink">Туры</span>
+
+                        <ul class="navbar__submenu">
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Все туры</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 2 дня</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 3 дня</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 4 дня</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="catalog-page.html">Экскурсии</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="transfer-page.html">Трансфер</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="news-page.html">Новости</a>
+                    </li>
+                    <li class="navbar__item navbar__item-with-submenu">
+                        <span class="navbar__navlink">О компании</span>
+                        <ul class="navbar__submenu">
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">О нас</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Реквизиты</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Пример договора</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Для иностранных <br> граждан</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <label class="switcher">
+                <input type="checkbox" class="switcher__control">
+                <span class="switcher__icon"></span>
+            </label>
+
+            <div class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+    </div>
+    <main class="page">
+        <div class="page__title-container">
+            <h1 class="page__title">Новости</h1>
+        </div>
+        <!--News Section-->
+        <section class="primary-section">
+            <h2 class="primary-section__title visually-hidden">Анонсы товых туров и экскурсий</h2>
+            <nav class="navbar news-navbar panel">
+                <ul class="navbar__menu news-navbar__menu">
+                    <li class="navbar__item news-navbar__item">
+                        <a class="navbar__navlink news-navbar__navlink_active news-navbar__navlink" href="#">За всё время</a>
+                    </li>
+                    <li class="navbar__item news-navbar__item">
+                        <a class="navbar__navlink news-navbar__navlink" href="#">2023</a>
+                    </li>
+                    <li class="navbar__item news-navbar__item">
+                        <a class="navbar__navlink news-navbar__navlink" href="#">2022</a>
+                    </li>
+                    <li class="navbar__item news-navbar__item">
+                        <a class="navbar__navlink news-navbar__navlink" href="#">2021</a>
+                    </li>
+                    <li class="navbar__item news-navbar__item">
+                        <a class="navbar__navlink news-navbar__navlink" href="#">2020</a>
+                    </li>
+                    <li class="navbar__item news-navbar__item">
+                        <a class="navbar__navlink news-navbar__navlink" href="#">2019</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="primary-section__cards-container">
+                <article class="card">
+                    <a href="text-page.html">
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="../assets/images/slider-image-1.jpg" alt="Image for 'News heading'">
+                            <span class="card__date">19, Dec</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                            <p class="card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                            </p>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="text-page.html">
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="../assets/images/slider-image-1.jpg" alt="Image for 'News heading'">
+                            <span class="card__date">19, Dec</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                            <p class="card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                            </p>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="text-page.html">
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="../assets/images/slider-image-1.jpg" alt="Image for 'News heading'">
+                            <span class="card__date">19, Dec</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                            <p class="card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                            </p>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="text-page.html">
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="../assets/images/slider-image-1.jpg" alt="Image for 'News heading'">
+                            <span class="card__date">19, Dec</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                            <p class="card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                            </p>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="text-page.html">
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="../assets/images/slider-image-1.jpg" alt="Image for 'News heading'">
+                            <span class="card__date">19, Dec</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                            <p class="card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                            </p>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="text-page.html">
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="../assets/images/slider-image-1.jpg" alt="Image for 'News heading'">
+                            <span class="card__date">19, Dec</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                            <p class="card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                            </p>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="text-page.html">
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="../assets/images/slider-image-1.jpg" alt="Image for 'News heading'">
+                            <span class="card__date">19, Dec</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+                            <p class="card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <nav class="pagination navbar">
+                <ul class="pagination__list navbar__menu">
+                    <li class="pagination__item">
+                        <a class="pagination__link" href="#">1</a>
+                    </li>
+                    <li class="pagination__item pagination__item_active">
+                        <a class="pagination__link" href="#">2</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a class="pagination__link" href="#">3</a>
+                    </li>
+                    <li class="pagination__item pagination__item_see-more">
+                        <span>...</span>
+                    </li>
+                    <li class="pagination__item">
+                        <a class="pagination__link" href="#">9</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <!--/News Section-->
+        <!--Contacts Section-->
+        <section class="primary-section">
+            <div class="primary-section__content primary-section__content_contact">
+                <!-- TODO: Add action -->
+                <form class="form contact-form" name="contact-form" action="" method="post" autocomplete="on">
+                    <input class="form__field" type="text" name="name" placeholder="Имя">
+                    <input class="form__field" type="tel" name="phone" placeholder="Номер телефона">
+                    <input class="form__field" type="email" name="email" placeholder="Почта">
+                    <textarea class="form__field" name="name" placeholder="Сообщение" spellcheck="true" rows="5"></textarea>
+                    <div class="contact-form__checboxes-wrapper">
+                        <label class="form__field_label">
+                            <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                            <span class="form__field_checkbox"></span>
+                            Я хочу получать e-mail рассылку от “БЕЛТРИП”
+                        </label>
+                        <label class="form__field_label">
+                            <input class="form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing">
+                            <span class="form__field_checkbox"></span>
+                            Я согласен(-на) с <a href="#"> политикой конфиденциальности</a>
+                        </label>
+                    </div>
+                    <button class="primary-section__btn contact-form__btn btn btn_secondary" type="submit">Отправить</button>
+                </form>
+                <div class="contact-info-wrapper">
+                    <div class="contact-info">
+                        <h2 class="contact-info__title">
+                            Остались вопросы?
+                            Свяжитесь с нами!
+                        </h2>
+                        <p class="contact-info__text">
+                            Вы можете позвонить нам, связаться в социальных сетях,
+                            отправить письмо на почту или оставить заявку в форме
+                        </p>
+                        <ul class="contacts-list">
+                            <li class="contacts-list__item contacts-list__item_mail">
+                                post@mail.ru
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_inst">
+                                _beltrip_
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_telegram">
+                                _beltrip_
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_phone">
+                                +375 (29) 11 11 111
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_whatsapp">
+                                +375 (29) 11 11 111
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_viber">
+                                +375 (29) 11 11 111
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/Contacts Section-->
+    </main>
+
+    <footer class="footer">
+        <a class="logo footer__logo" href="main-page.html">
+            <img src="../assets/logo-footer.svg" alt="Логотип сайта">
+        </a>
+        <nav class="footer__navbar navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="catalog-page.html">Туры</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="catalog-page.html">Экскурсии</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="transfer-page.html">Трансфер</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="news-page.html">Новости</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="text-page.html">Реквизиты</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="text-page.html">Пример договора</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="../assets/libs/jquery-3.6.4.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>

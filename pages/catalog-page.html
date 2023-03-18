@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туры и экскурсии по всей Беларуси</title>
+    <link href="../css/normilize.css" rel="stylesheet" type="text/css">
+    <link href="../css/fonts.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/catalog-page.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header-container">
+        <header class="header">
+            <a class="header__logo" href="main-page.html">
+                <img src="../assets/logo.svg" alt="Логотип сайта">
+            </a>
+            <nav class="header__navbar navbar">
+                <ul class="navbar__menu">
+                    <li class="navbar__item navbar__item-with-submenu">
+                        <span class="navbar__navlink">Туры</span>
+
+                        <ul class="navbar__submenu">
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Все туры</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 2 дня</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 3 дня</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="catalog-page.html">Туры на 4 дня</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="catalog-page.html">Экскурсии</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="transfer-page.html">Трансфер</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__navlink" href="news-page.html">Новости</a>
+                    </li>
+                    <li class="navbar__item navbar__item-with-submenu">
+                        <span class="navbar__navlink">О компании</span>
+                        <ul class="navbar__submenu">
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">О нас</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Реквизиты</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Пример договора</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__navlink" href="text-page.html">Для иностранных <br> граждан</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <label class="switcher">
+                <input type="checkbox" class="switcher__control">
+                <span class="switcher__icon"></span>
+            </label>
+
+            <div class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+    </div>
+    <main class="page">
+        <div class="page__title-container">
+            <h1 class="page__title">Туры по Беларуси</h1>
+        </div>
+        <div class="filter-page__content-container">
+            <!-- Filter -->
+            <button class="filter-show-btn btn btn_secondary"type="button">Фильтр</button>
+            <aside class="filter sticky-side">
+                <h2 class="filter__title">Выберите категории</h2>
+
+                <form class="form filter__form">
+                    <label class="form__field_label filter__field">
+                        <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                        <span class="form__field_checkbox"></span>
+                        Экскурсии
+                    </label>
+                    <label class="form__field_label filter__field">
+                        <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                        <span class="form__field_checkbox"></span>
+                        Туры на 2 дня
+                    </label>
+                    <label class="form__field_label filter__field">
+                        <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                        <span class="form__field_checkbox"></span>
+                        Туры на 3 дня
+                    </label>
+                    <label class="form__field_label filter__field">
+                        <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                        <span class="form__field_checkbox"></span>
+                        Туры на 4 дня
+                    </label>
+        
+                    <select class="form__field form__field_cities filter__field" name="cities" multiple>
+                        <option value="Minsk">Минск</option>
+                        <option value="Brest">Брест</option>
+                        <option value="Grodno">Гродно</option>
+                        <option value="Vitebsk">Витебск</option>
+                        <option value="Polotsk">Полоцк</option>
+                        <option value="Mogilev">Могилёв</option>
+                        <option value="Bobruisk">Бобруйск</option>
+                        <option value="Gomel">Гомель</option>
+                    </select>
+                    <div class="form__field_calendar">
+                        <input class="form__field" type="text" name="daterange" value="" placeholder="Дата" />
+                        <i class="form__field_calendar-icon"></i>
+                    </div>
+                    <select class="form__field form__field_types filter__field" name="types" multiple>
+                        <option value="TourType1">Рекреационный</option>
+                        <option value="TourType2">Деловой</option>
+                        <option value="TourType3">Эко-тур</option>
+                        <option value="TourType4">Этнический</option>
+                        <option value="TourType5">Ещё какой-то</option>
+                    </select>
+                    <button class="btn btn_primary filter__btn" type="submit">
+                        <span>Применить</span>
+                    </button>
+                    <button class="btn secondary-btn filter__btn filter-clear-btn" type="button">
+                        Очистить фильтр
+                    </button>
+                </form>
+            </aside>
+            <!-- /Filter -->
+            <!-- Tours cards -->
+            <section class="primary-section filter-page__catalog">
+                <h2 class="primary-section__title visually-hidden">Экскурсии и туры по всей Беларуси от "БЕЛТРИП"</h2>
+                <div class="primary-section__cards-container">
+                    <article class="card">
+                        <a href="tour-page.html">
+                            <img class="card__img" src="../assets/images/tour-card.jpg">
+                        </a>
+                        <a href="tour-page.html">
+                            <h3 class="card__title">
+                                Название тура
+                            </h3>
+                            <p class="card__text">
+                                Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями
+                                Минска и окрестностей. Вы
+                                также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси,
+                                ее культурой и
+                                бытом, посетите культовые места Юнеско и королевский город Гродно
+                            </p>
+                        </a>
+                        <div class="card__price-info">
+                            <span>3 дня</span>
+                            <span>1000р</span>
+                        </div>
+                        <div class="card__bottom">
+                            <button class="card__btn btn btn_primary" type="button">
+                                <span>Забронировать</span>
+                            </button>
+                            <a href="tour-page.html">
+                                <svg class="card__icon" viewBox="0 0 28 25">
+                                    <path
+                                        d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <a href="tour-page.html">
+                            <img class="card__img" src="https://picsum.photos/600/400">
+                        </a>
+                        <a href="tour-page.html">
+                            <h3 class="card__title">
+                                Название тура
+                            </h3>
+                            <p class="card__text">
+                                Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями
+                                Минска и окрестностей. Вы
+                                также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси,
+                                ее культурой и
+                                бытом, посетите культовые места Юнеско и королевский город Гродно
+                            </p>
+                        </a>
+                        <div class="card__price-info">
+                            <span>3 дня</span>
+                            <span>1000р</span>
+                        </div>
+                        <div class="card__bottom">
+                            <button class="card__btn btn btn_primary" type="button">
+                                <span>Забронировать</span>
+                            </button>
+                            <a href="tour-page.html">
+                                <svg class="card__icon" viewBox="0 0 28 25">
+                                    <path
+                                        d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <a href="tour-page.html">
+                            <img class="card__img" src="../assets/images/tour-card.jpg">
+                        </a>
+                        <a href="tour-page.html">
+                            <h3 class="card__title">
+                                Название тура
+                            </h3>
+                            <p class="card__text">
+                                Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями
+                                Минска и окрестностей. Вы
+                                также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси,
+                                ее культурой и
+                                бытом, посетите культовые места Юнеско и королевский город Гродно
+                            </p>
+                        </a>
+                        <div class="card__price-info">
+                            <span>3 дня</span>
+                            <span>1000р</span>
+                        </div>
+                        <div class="card__bottom">
+                            <button class="card__btn btn btn_primary" type="button">
+                                <span>Забронировать</span>
+                            </button>
+                            <a href="tour-page.html">
+                                <svg class="card__icon" viewBox="0 0 28 25">
+                                    <path
+                                        d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <a href="tour-page.html">
+                            <img class="card__img" src="https://picsum.photos/600/400">
+                        </a>
+                        <a href="tour-page.html">
+                            <h3 class="card__title">
+                                Название тура
+                            </h3>
+                            <p class="card__text">
+                                Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями
+                                Минска и окрестностей. Вы
+                                также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси,
+                                ее культурой и
+                                бытом, посетите культовые места Юнеско и королевский город Гродно
+                            </p>
+                        </a>
+                        <div class="card__price-info">
+                            <span>3 дня</span>
+                            <span>1000р</span>
+                        </div>
+                        <div class="card__bottom">
+                            <button class="card__btn btn btn_primary" type="button">
+                                <span>Забронировать</span>
+                            </button>
+                            <a href="tour-page.html">
+                                <svg class="card__icon" viewBox="0 0 28 25">
+                                    <path
+                                        d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <a href="tour-page.html">
+                            <img class="card__img" src="../assets/images/tour-card.jpg">
+                        </a>
+                        <a href="tour-page.html">
+                            <h3 class="card__title">
+                                Название тура
+                            </h3>
+                            <p class="card__text">
+                                Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями
+                                Минска и окрестностей. Вы
+                                также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси,
+                                ее культурой и
+                                бытом, посетите культовые места Юнеско и королевский город Гродно
+                            </p>
+                        </a>
+                        <div class="card__price-info">
+                            <span>3 дня</span>
+                            <span>1000р</span>
+                        </div>
+                        <div class="card__bottom">
+                            <button class="card__btn btn btn_primary" type="button">
+                                <span>Забронировать</span>
+                            </button>
+                            <a href="tour-page.html">
+                                <svg class="card__icon" viewBox="0 0 28 25">
+                                    <path
+                                        d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <a href="tour-page.html">
+                            <img class="card__img" src="https://picsum.photos/600/400">
+                        </a>
+                        <a href="tour-page.html">
+                            <h3 class="card__title">
+                                Название тура
+                            </h3>
+                            <p class="card__text">
+                                Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями
+                                Минска и окрестностей. Вы
+                                также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси,
+                                ее культурой и
+                                бытом, посетите культовые места Юнеско и королевский город Гродно
+                            </p>
+                        </a>
+                        <div class="card__price-info">
+                            <span>3 дня</span>
+                            <span>1000р</span>
+                        </div>
+                        <div class="card__bottom">
+                            <button class="card__btn btn btn_primary" type="button">
+                                <span>Забронировать</span>
+                            </button>
+                            <a href="tour-page.html">
+                                <svg class="card__icon" viewBox="0 0 28 25">
+                                    <path
+                                        d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <a href="tour-page.html">
+                            <img class="card__img" src="../assets/images/tour-card.jpg">
+                        </a>
+                        <a href="tour-page.html">
+                            <h3 class="card__title">
+                                Название тура
+                            </h3>
+                            <p class="card__text">
+                                Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями
+                                Минска и окрестностей. Вы
+                                также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси,
+                                ее культурой и
+                                бытом, посетите культовые места Юнеско и королевский город Гродно
+                            </p>
+                        </a>
+                        <div class="card__price-info">
+                            <span>3 дня</span>
+                            <span>1000р</span>
+                        </div>
+                        <div class="card__bottom">
+                            <button class="card__btn btn btn_primary" type="button">
+                                <span>Забронировать</span>
+                            </button>
+                            <a href="tour-page.html">
+                                <svg class="card__icon" viewBox="0 0 28 25">
+                                    <path
+                                        d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <a href="tour-page.html">
+                            <img class="card__img" src="https://picsum.photos/600/400">
+                        </a>
+                        <a href="tour-page.html">
+                            <h3 class="card__title">
+                                Название тура
+                            </h3>
+                            <p class="card__text">
+                                Вас ждет богатая экскурсионная программа - знакомство с историей и достопримечательностями
+                                Минска и окрестностей. Вы
+                                также увидите величественный замок в Мире и Несвиже, познакомитесь с древней историей Беларуси,
+                                ее культурой и
+                                бытом, посетите культовые места Юнеско и королевский город Гродно
+                            </p>
+                        </a>
+                        <div class="card__price-info">
+                            <span>3 дня</span>
+                            <span>1000р</span>
+                        </div>
+                        <div class="card__bottom">
+                            <button class="card__btn btn btn_primary" type="button">
+                                <span>Забронировать</span>
+                            </button>
+                            <a href="tour-page.html">
+                                <svg class="card__icon" viewBox="0 0 28 25">
+                                    <path
+                                        d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!-- /Tours section -->
+        </div>
+        <!--Contacts Section-->
+        <section class="primary-section">
+            <div class="primary-section__content primary-section__content_contact">
+                <!-- TODO: Add action -->
+                <form class="form contact-form" name="contact-form" action="" method="post" autocomplete="on">
+                    <input class="form__field" type="text" name="name" placeholder="Имя">
+                    <input class="form__field" type="tel" name="phone" placeholder="Номер телефона">
+                    <input class="form__field" type="email" name="email" placeholder="Почта">
+                    <textarea class="form__field" name="name" placeholder="Сообщение" spellcheck="true" rows="5"></textarea>
+                    <div class="contact-form__checboxes-wrapper">
+                        <label class="form__field_label">
+                            <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                            <span class="form__field_checkbox"></span>
+                            Я хочу получать e-mail рассылку от “БЕЛТРИП”
+                        </label>
+                        <label class="form__field_label">
+                            <input class="form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing">
+                            <span class="form__field_checkbox"></span>
+                            Я согласен(-на) с <a href="#"> политикой конфиденциальности</a>
+                        </label>
+                    </div>
+                    <button class="primary-section__btn contact-form__btn btn btn_secondary" type="submit">Отправить</button>
+                </form>
+                <div class="contact-info-wrapper">
+                    <div class="contact-info">
+                        <h2 class="contact-info__title">
+                            Остались вопросы?
+                            Свяжитесь с нами!
+                        </h2>
+                        <p class="contact-info__text">
+                            Вы можете позвонить нам, связаться в социальных сетях,
+                            отправить письмо на почту или оставить заявку в форме
+                        </p>
+                        <ul class="contacts-list">
+                            <li class="contacts-list__item contacts-list__item_mail">
+                                post@mail.ru
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_inst">
+                                _beltrip_
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_telegram">
+                                _beltrip_
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_phone">
+                                +375 (29) 11 11 111
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_whatsapp">
+                                +375 (29) 11 11 111
+                            </li>
+                            <li class="contacts-list__item contacts-list__item_viber">
+                                +375 (29) 11 11 111
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/Contacts Section-->
+    </main>
+
+    <footer class="footer">
+        <a class="logo footer__logo" href="main-page.html">
+            <img src="../assets/logo-footer.svg" alt="Логотип сайта">
+        </a>
+        <nav class="footer__navbar navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="catalog-page.html">Туры</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="catalog-page.html">Экскурсии</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="transfer-page.html">Трансфер</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="news-page.html">Новости</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="text-page.html">Реквизиты</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__navlink" href="text-page.html">Пример договора</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="../assets/libs/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/catalog-page.js"></script>
+</body>
