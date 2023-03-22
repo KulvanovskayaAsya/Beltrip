@@ -1,14 +1,3 @@
-.primary-section {
-    max-width: 1200px;
-    margin: 5rem auto;
-}
-
-@media(max-width: 1248px) {
-    .primary-section {
-        margin: 5rem 1.5rem;
-    }
-}
-
 .main-slider-container {
     position: relative;
     height: 85vh;
@@ -61,7 +50,12 @@
 
 .search-form__flex-bottom {
     display: flex;
+    align-items: flex-start;
     gap: 1.25rem;
+}
+
+.search-form__btn {
+    height: fit-content;
 }
 
 .selectMultiple,

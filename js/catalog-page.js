@@ -54,20 +54,24 @@ $(document).ready(function() {
     $(document).on('click', '.selectMultiple ul li', function(e) {
         let select = $(this).parent().parent();
         let li = $(this);
-        $('.selectMultiple').addClass('active');
+
+        select.addClass('active');
+
         if(!select.hasClass('clicked')) {
             select.addClass('clicked');
             li.prev().addClass('beforeRemove');
             li.next().addClass('afterRemove');
             li.addClass('remove');
             let a = $('<a />').addClass('notShown').html('<em>' + li.text() + '</em><i></i>').hide().appendTo(select.children('div'));
-            a.slideDown(100, function() {
+            
+            a.slideDown(200, function() {
                 setTimeout(function() {
                     a.addClass('shown');
                     select.children('div').children('span').addClass('hide');
                     select.find('option:contains(' + li.text() + ')').prop('selected', true);
                 }, 200);
             });
+
             setTimeout(function() {
                 if(li.prev().is(':last-child')) {
                     li.prev().removeClass('beforeRemove');
@@ -80,11 +84,11 @@ $(document).ready(function() {
                     li.next().removeClass('afterRemove');
                 }, 200);
 
-                li.slideUp(400, function() {
+                li.slideUp(100, function() {
                     li.remove();
                     select.removeClass('clicked');
                 });
-            }, 600);
+            }, 100);
         }
     });
 

@@ -5,18 +5,6 @@
     margin: 0 auto;
 }
 
-.text-section {
-    border-radius: var(--border-radius);
-    background-color: var(--surface-color);
-    margin-bottom: 3.5rem;
-    padding: 2.5rem;
-}
-
-.text-section__title {
-    margin-block: 0 2.5rem;
-    text-align: center;
-}
-
 .text-section:last-child {
     margin-bottom: 0;
 }
@@ -61,15 +49,5 @@
         position: inherit;
         width: 100%;
         margin: 0 0 2.5rem 0;
-    }
-}
-
-@media(max-width: 550px) {
-    .sticky-side-container {
-        margin: 0 1rem;
-    }
-
-    .text-section {
-        padding: 1.5rem;
     }
 }

@@ -1,0 +1,60 @@
+.cost-table-container {
+    overflow: auto;
+}
+
+@media(min-width: 899.9px) {
+    .product-info:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    
+    .product-info:nth-child(even) .product-info__features {
+        justify-content: flex-end;
+    }
+    
+    .product-info:nth-child(even) .product-info__title,
+    .product-info:nth-child(even) .product-info__text {
+        text-align: right;
+    }
+}
+
+.pricing-table {
+    width: 100%;
+    border-spacing: 0;
+    font: 500 1.25rem/1 'Raleway', sans-serif;
+    text-align: center;
+}
+
+.pricing-table__heading-cell {
+    padding-right: 2rem;
+    border-top: 1px var(--primary-color) solid;
+    font-weight: 600;
+    text-align: left;
+}
+
+.pricing-table__cell {
+    padding: 2.5rem 1.5rem;
+    border-top: 1px var(--primary-color) solid;
+    white-space: nowrap;
+}
+
+@media(max-width: 700px) {
+    #cost-table .text-section__title {
+        margin-block-end: 1.25rem;
+    }
+
+    .pricing-table {
+        font-size: 14px;
+    }
+    
+    .pricing-table__heading-cell {
+        padding-right: 1rem;
+    }
+
+    .pricing-table__cell {
+        padding: 2rem 1rem;
+    }
+
+    .pricing-table__caption h3 {
+        font-size: 1.25rem;
+    }
+}
