@@ -26,20 +26,18 @@ function createMultiSelect(name) {
     select.wrap(div);
 }
 
-$(document).ready(function() {
-    $(function() {
-        $('input[name="daterange"]').daterangepicker({
-            opens: 'left',
-            showDropdowns: true,
-            autoUpdateInput: false,
-            autoApply: true,
-            locale: {
-                format: 'DD.MM.YYYY',
-                cancelLabel: 'Clear'
-            }
-        }, function(start, end, label) {
-            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-        });
+$(function (){
+    $('input[name="daterange"]').daterangepicker({
+        opens: 'left',
+        showDropdowns: true,
+        autoUpdateInput: false,
+        autoApply: true,
+        locale: {
+            format: 'DD.MM.YYYY',
+            cancelLabel: 'Clear'
+        }
+    }, function(start, end, label) {
+        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
     });
 
     $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
