@@ -1257,6 +1257,56 @@ h1 {
     }
 }
 
+/*Datepicker*/
+.form__field_calendar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form__field_calendar .form__field {
+    padding: 0.925rem 2.5rem 0.925rem 1.5rem;
+}
+
+.form__field_calendar-icon {
+    position: absolute;
+    right: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background: url('../assets/icons/calendar.svg') no-repeat center/contain;
+}
+
+.drp-calendar.right {
+    display: none !important;
+}
+
+.drp-calendar {
+    color: var(--text-color-dark);
+    font: 500 14px/1 'Raleway', sans-serif;
+}
+
+.daterangepicker td.in-range {
+    background-color: #8bc63e6e;
+}
+
+.daterangepicker td.active,
+.daterangepicker .end-date,
+.daterangepicker td.active:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color-dark);
+}
+
+.daterangepicker td.available:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+@media(max-width: 600px) {
+    .daterangepicker .table-condensed {
+        font-size: 16px !important;
+    }
+}
+/*Multiselect*/
 .selectMultiple {
     position: relative;
     z-index: 51;
@@ -1265,7 +1315,7 @@ h1 {
 .selectMultiple::before {
     position: absolute;
     left: 1rem;
-    bottom: 0.85rem;
+    bottom: 0.95rem;
     z-index: 9;
     color: var(--text-color-placeholder);
 }
@@ -1290,7 +1340,6 @@ h1 {
     position: relative;
     z-index: 2;
     min-height: 3rem;
-    height: 100%;
     padding: 8px 24px 2px 12px;
     border-radius: 8px;
     background: #fff;
@@ -1584,25 +1633,6 @@ h1 {
     opacity: 1;
     visibility: visible;
     filter: drop-shadow(0 16px 24px rgba(22, 42, 90, 0.16));
-}
-
-.form__field_calendar {
-    font-family: 'Lora';
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.form__field_calendar .form__field {
-    padding: 0.925rem 2.5rem 0.925rem 1.5rem;
-}
-
-.form__field_calendar-icon {
-    position: absolute;
-    right: 1rem;
-    height: 1.5rem;
-    width: 1.5rem;
-    background: url('../assets/icons/calendar.svg') no-repeat center/contain;
 }
 
 .pagination {

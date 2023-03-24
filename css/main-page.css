@@ -48,6 +48,10 @@
     color: var(--text-color-light);
 }
 
+.search-form {
+    font: 500 16px/1 'Raleway', sans-serif;
+}
+
 .search-form__flex-bottom {
     display: flex;
     align-items: flex-start;

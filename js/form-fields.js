@@ -28,20 +28,17 @@ function createMultiSelect(name) {
 
 $(function (){
     $('input[name="daterange"]').daterangepicker({
-        opens: 'left',
+        opens: 'right',
+        duration: 200,
+        linkedCalendars: false,
         showDropdowns: true,
-        autoUpdateInput: false,
-        autoApply: true,
         locale: {
             format: 'DD.MM.YYYY',
-            cancelLabel: 'Clear'
+			daysOfWeek: ["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],
+			monthNames: ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"]
         }
     }, function(start, end, label) {
         console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-    });
-
-    $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('DD.MM.YYYY') + ' - ' + picker.endDate.format('DD.MM.YYYY'));
     });
 
     let name = '_cities';
