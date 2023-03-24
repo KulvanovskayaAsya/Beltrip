@@ -44,6 +44,8 @@ $(function() {
         }
     });
 
+    Fancybox.bind('[data-fancybox="gallery"]', {});    
+
     const coverflowSlider = new Swiper('.coverflow-slider', {
         effect: 'coverflow',
         slidesPerView: 'auto',

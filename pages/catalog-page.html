@@ -8,7 +8,9 @@
     <title>Туры и экскурсии по всей Беларуси</title>
     <link href="../css/normilize.css" rel="stylesheet" type="text/css">
     <link href="../css/fonts.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <link href="../assets/libs/datepicker.min.css" rel="stylesheet" type="text/css">
+
     <link href="../css/common.css" rel="stylesheet" type="text/css">
     <link href="../css/catalog-page.css" rel="stylesheet" type="text/css">
 </head>
@@ -121,9 +123,9 @@
                         <option value="Bobruisk">Бобруйск</option>
                         <option value="Gomel">Гомель</option>
                     </select>
-                    <div class="form__field_calendar">
-                        <input class="form__field" type="text" name="daterange" value="" placeholder="Дата" />
-                        <i class="form__field_calendar-icon"></i>
+                    <div class="form__calendar-wrapper">
+                        <input class="form__field form__field_calendar" type="text" placeholder="Дата">
+                        <i class="form__calendar-icon"></i>
                     </div>
                     <select class="form__field form__field_types filter__field" name="types" multiple>
                         <option value="TourType1">Рекреационный</option>
@@ -418,8 +420,8 @@
             <div class="primary-section__content primary-section__content_contact">
                 <!-- TODO: Add action -->
                 <form class="form contact-form" name="contact-form" action="" method="post" autocomplete="on">
-                    <input class="form__field" type="text" name="name" placeholder="Имя">
-                    <input class="form__field" type="tel" name="phone" placeholder="Номер телефона">
+                    <input class="form__field" type="text" name="name" placeholder="Имя" required>
+                    <input class="form__field" type="tel" name="phone" placeholder="Номер телефона" required>
                     <input class="form__field" type="email" name="email" placeholder="Почта">
                     <textarea class="form__field" name="name" placeholder="Сообщение" spellcheck="true" rows="5"></textarea>
                     <div class="contact-form__checboxes-wrapper">
@@ -502,8 +504,9 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../assets/libs/datepicker.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+
     <script src="../js/script.js"></script>
     <script src="../js/form-fields.js"></script>
 </body>

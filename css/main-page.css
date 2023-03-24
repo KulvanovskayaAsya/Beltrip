@@ -52,14 +52,14 @@
     font: 500 16px/1 'Raleway', sans-serif;
 }
 
+.search-form__btn {
+    height: 50px;
+}
+
 .search-form__flex-bottom {
     display: flex;
     align-items: flex-start;
     gap: 1.25rem;
-}
-
-.search-form__btn {
-    height: fit-content;
 }
 
 .selectMultiple,
@@ -114,9 +114,9 @@
 }
 
 @media(max-width: 800px) {
-    .selectMultiple,
+    .selectMultiple, 
     .search-form .form__field {
-        width: 200px;
+        width: 240px;
     }
 }
 
@@ -125,7 +125,7 @@
         flex-direction: column;
     }
 
-    .form__field_calendar {
+    .form__calendar-wrapper {
         flex-grow: 1;
     }
 
@@ -135,13 +135,19 @@
     }
 
     .selectMultiple::before {
-        bottom: 0.75rem;
+        bottom: 0.95rem;
     }
 }
 
 @media(max-width: 600px) {
     .main-slider__heading {
         width: 100%;
+    }
+}
+
+@media(max-width: 450px) {
+    .search-form {
+        gap: 1rem;
     }
 }
 
@@ -603,5 +609,15 @@
     .recalls-slider__btn_next {
         background: url('../assets/icons/chevron-right.svg') no-repeat center/70%;
         right: -1rem;
+    }
+}
+
+@media(max-width: 500px) {
+    .main-slider__banner {
+        bottom: 4rem;
+    }
+
+    .main-slider>.swiper-pagination-bullets {
+        bottom: 1rem;
     }
 }

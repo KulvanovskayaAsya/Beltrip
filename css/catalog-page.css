@@ -72,6 +72,12 @@
     flex-grow: 1;
 }
 
+.selectMultiple>div,
+.form__field_calendar,
+.selectMultiple>ul li {
+    background-color: #fff;
+}
+
 .selectMultiple_cities {
     margin-top: 3rem;
 }

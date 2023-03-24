@@ -8,12 +8,67 @@
     <title>Beltrip</title>
     <link href="../css/normilize.css" rel="stylesheet" type="text/css">
     <link href="../css/fonts.css" rel="stylesheet" type="text/css">
+
     <link href="../assets/libs/swiper-bundle.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="../assets/libs/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet" type="text/css">
+
     <link href="../css/common.css" rel="stylesheet" type="text/css">
     <link href="../css/main-page.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body class="prevent-scroll">
+    <div class="preloader-container">
+        <div class="logo-vector logo-vector_small"></div>
+        <div class="logo-vector logo-vector_medium"></div>
+        <div class="logo-vector logo-vector_large"></div>
+    </div>
+    <div id="booking-modal" class="modal">
+        <form class="form modal__form" name="booking-form" action="" method="post" autocomplete="on">
+            <input class="form__field" type="text" name="name" placeholder="Имя" required>
+            <input class="form__field" type="tel" name="phone" placeholder="Номер телефона" required>
+            <input class="form__field" type="email" name="email" placeholder="Почта">
+            <div class="form__calendar-wrapper">
+                <input class="form__field form__field_calendar" type="text" placeholder="Дата">
+                <i class="form__calendar-icon"></i>
+            </div>
+            <textarea class="form__field" name="name" placeholder="Сообщение" spellcheck="true" rows="5"></textarea>
+
+            <label class="form__field_label">
+                <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                <span class="form__field_checkbox"></span>
+                Я хочу получать e-mail рассылку от “БЕЛТРИП”
+            </label>
+            <label class="form__field_label">
+                <input class="form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing">
+                <span class="form__field_checkbox"></span>
+                Я согласен(-на) с <a href="#"> политикой конфиденциальности</a>
+            </label>
+            <button class="primary-section__btn contact-form__btn btn btn_secondary" type="submit">Отправить</button>
+        </form>
+    </div>
+    <div id="recall-modal" class="modal">
+        <form class="form modal__form" name="recall-form" action="" method="post" autocomplete="on">
+            <input class="form__field" type="text" name="name" placeholder="Имя" required>
+            <textarea class="form__field" name="recall" placeholder="Текст отзыва" spellcheck="true" rows="5"></textarea>
+
+            <label class="form__field form__field_file">
+                Прикрепите фото или видео
+                <input class="form__field_file-input visually-hidden" type="file" name="file" multiple accept="image/*" data-multiple-caption="{count} files selected">
+            </label>
+
+            <label class="form__field_label">
+                <input class="form__field form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing" checked>
+                <span class="form__field_checkbox"></span>
+                Я хочу получать e-mail рассылку от “БЕЛТРИП”
+            </label>
+            <label class="form__field_label">
+                <input class="form__field_hidden-checkbox" type="checkbox" name="isReceiveMailing">
+                <span class="form__field_checkbox"></span>
+                Я согласен(-на) с <a href="#"> политикой конфиденциальности</a>
+            </label>
+            <button class="primary-section__btn contact-form__btn btn btn_secondary" type="submit">Отправить</button>
+        </form>
+    </div>
     <div class="header-container">
         <header class="header">
             <a class="header__logo" href="main-page.html">
@@ -114,10 +169,10 @@
                         <option value="Bobruisk">Бобруйск</option>
                         <option value="Gomel">Гомель</option>
                     </select>
-                    <div class="search-form__flex-bottom">
-                        <div class="form__field_calendar">
-                            <input class="form__field" type="text" name="daterange" value="" placeholder="Дата" />
-                            <i class="form__field_calendar-icon"></i>
+                    <div class="search-form__flex-bottom">  
+                        <div class="form__calendar-wrapper">
+                            <input class="form__field form__field_calendar" type="text" placeholder="Дата">
+                            <i class="form__calendar-icon"></i>
                         </div>
                         <button class="search-form__btn btn btn_secondary" type="submit">Поиск</button>
                     </div>
@@ -147,7 +202,7 @@
                         <span>1000р</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="tour-page.html">
@@ -177,7 +232,7 @@
                         <span>1000р</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="tour-page.html">
@@ -207,7 +262,7 @@
                         <span>1000р</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="tour-page.html">
@@ -237,7 +292,7 @@
                         <span>1000р</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="tour-page.html">
@@ -330,7 +385,7 @@
                         <span>1000р</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="tour-page.html">
@@ -359,7 +414,7 @@
                         <span>1000р</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="tour-page.html">
@@ -388,7 +443,7 @@
                         <span>1000р</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="tour-page.html">
@@ -417,7 +472,7 @@
                         <span>1000р</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="tour-page.html">
@@ -538,7 +593,7 @@
                         <span>от 30р/час</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="transfer-page.html.html">
@@ -569,7 +624,7 @@
                         <span>от 30р/час</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="transfer-page.html.html">
@@ -600,7 +655,7 @@
                         <span>от 30р/час</span>
                     </div>
                     <div class="card__bottom">
-                        <button class="card__btn btn btn_primary" type="button">
+                        <button data-fancybox data-src="#booking-modal" class="card__btn btn btn_primary" type="button">
                             <span>Забронировать</span>
                         </button>
                         <a href="transfer-page.html.html">
@@ -754,7 +809,7 @@
                 <button class="recalls-slider__btn recalls-slider__btn_prev"></button>
                 <button class="recalls-slider__btn recalls-slider__btn_next"></button>
             </div>
-            <a class="primary-section__btn btn btn_secondary" href="">Оставить отзыв</a>
+            <button class="primary-section__btn btn btn_secondary" type="button" data-fancybox data-src="#recall-modal">Оставить отзыв</button>
         </section>
         <!--/Recalls Section-->
         <!--Contacts Section-->
@@ -762,8 +817,8 @@
             <div class="primary-section__content primary-section__content_contact">
                 <!-- TODO: Add action -->
                 <form class="form contact-form" name="contact-form" action="" method="post" autocomplete="on">
-                    <input class="form__field" type="text" name="name" placeholder="Имя">
-                    <input class="form__field" type="tel" name="phone" placeholder="Номер телефона">
+                    <input class="form__field" type="text" name="name" placeholder="Имя" required>
+                    <input class="form__field" type="tel" name="phone" placeholder="Номер телефона" required>
                     <input class="form__field" type="email" name="email" placeholder="Почта">
                     <textarea class="form__field" name="name" placeholder="Сообщение" spellcheck="true" rows="5"></textarea>
                     <div class="contact-form__checboxes-wrapper">
@@ -816,7 +871,6 @@
         </section>
         <!--/Contacts Section-->
     </main>
-
     <footer class="footer">
         <a class="logo footer__logo" href="main-page.html">
             <img src="../assets/logo-footer.svg" alt="Логотип сайта">
@@ -847,8 +901,10 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="../assets/libs/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../assets/libs/datepicker.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
     <script src="../js/script.js"></script>
     <script src="../js/form-fields.js"></script>
     <script src="../js/main-page.js"></script>

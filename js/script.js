@@ -21,7 +21,7 @@ function hasScrolled() {
     lastScrollTop = st;
 }
 
-$(function (){ 
+$(function (){
     /* Hide header on scroll down */
     $(window).scroll(function() {
         didScroll = true;
@@ -58,4 +58,9 @@ $(function (){
         $(this).toggleClass('navbar__navlink_active');
         $('.text-page__navbar .navbar__navlink').not($(this)).removeClass('navbar__navlink_active');
     })
+});
+
+$(window).on('load', function(){
+    $('.preloader-container').hide();
+    $('body').removeClass('prevent-scroll');
 });

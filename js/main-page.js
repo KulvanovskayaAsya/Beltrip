@@ -117,4 +117,12 @@ $(function() {
             }
         }
     });
+
+    $('[data-src="#booking-modal"]').click(function() {
+        Fancybox.show([{ src: "#booking-modal", type: "inline" }]);
+    });
+    
+    $('[data-src="#recall-modal"]').click(function() {
+        Fancybox.show([{ src: "#recall-modal", type: "inline" }]);
+    });
 });
