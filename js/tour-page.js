@@ -67,37 +67,41 @@ $(function() {
     });
 });
 
+function drawSVG(currentTourProgram, svg, startEl, endEl) {
+    // $("#mySVG").clone().addClass("clone").insertAfter(svg);
+    let tourProgramHeight = currentTourProgram.height();
+    let tourProgramWidth = currentTourProgram.width();
+
+    //From left to right
+    let x1 = startEl.offset().left + 16;
+    let y1 = startEl.offset().top + (startEl.height()/2) - topSvgContainer;
+
+    let x2 = endEl.offset().left + endEl.width() - 16;
+    let y2 = endEl.offset().top + (endEl.height()/2) - topSvgContainer;
+
+    let startPoint = "M" + x1 + "," + y1;
+    let endPoint = x2 + ", " + y2;
+    let firstCurves = "C" + (x1 - 200) + "," + y1 + " " + (x1 - 150) + "," + (tourProgramHeight + y1) + " " + x1 + ", " + (tourProgramHeight + y1);
+    let secondCurves = "S" + x1 + ", " + (tourProgramHeight + y1) + " " + (tourProgramWidth/4) + "," + (tourProgramHeight + y1 - 40) + " " + (tourProgramWidth/4 + 140) + "," + (tourProgramHeight + 230) + " " + (tourProgramWidth/2) + "," + y2;
+    let thirdCurves = (tourProgramWidth/2 + 20) + "," + (y2 + 10) + " " + (tourProgramWidth/2 + 280) + "," + (y2 - 100) + " " + (x2 + 100) + "," + (y2 - 120) + " " + x2 + "," + y2;
+
+    let temp = startPoint + " " + firstCurves + " " + secondCurves + " " + thirdCurves;
+    $(svg).find('path').attr("d", temp)
+}
+
 let tourPrograms = $('.tour-program');
 let topSvgContainer = $('.svg-container').offset().top;
 
 tourPrograms.each(function(index) {
     if(index < 1) {
-        drawSVG($("#mySVG"), $(this).find('.tour-program__title'), $(this).next().find('.tour-program__title'));
+        drawSVG($(this), $("#mySVG"), $(this).find('.tour-program__title'), $(this).next().find('.tour-program__title'));
     }
 })
 
-function drawSVG(target, startEl, endEl) {
-    // $("#mySVG").clone().addClass("clone").insertAfter(target);
-    let blockHeight = startEl.height();
-
-    var x1 = startEl.offset().left + 16;
-    var y1 = startEl.offset().top + (startEl.height()/2) - topSvgContainer;
-
-    var x2 = endEl.offset().left + endEl.width() - 16;
-    var y2 = endEl.offset().top + (endEl.height()/2) - topSvgContainer;
-
-    let startPoint = "M" + x1 + "," + y1 + " ";
-    
-    
-    let temp = startPoint + "C" + (x1 - 200) + "," + (y1 + blockHeight) + " " + (x1 + 100) + "," + (blockHeight + 200) + " " + x1 + ", " + (blockHeight + 100);
-    console.log(temp)
-    // let temp2 = "M" + x1 + "," + y1 + " C" + (x1 - 300) + "," + (y1 + 300) + " " + (x1 + 100) + "," + (y1 + 200) + " " + x2 + ", " + y2;
-    // console.log(temp2)
-    $(target).find('path').attr("d", temp)
-}
-
-
-
 $(window).resize(function() {
-    drawSVG($("#mySVG"), $(tourProgramsTitles[0]), $(tourProgramsTitles[1]));
+    tourPrograms.each(function(index) {
+        if(index < 1) {
+            drawSVG($(this), $("#mySVG"), $(this).find('.tour-program__title'), $(this).next().find('.tour-program__title'));
+        }
+    })
 })
