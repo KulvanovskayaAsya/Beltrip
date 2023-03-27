@@ -6,11 +6,11 @@
 .tour-program__title {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 }
 
-.tour-program__title::before {
+.tour-program__title:before {
     content: url('../assets/icons/place-marker.svg');
-    margin-right: 1.5rem;
 }
 
 .tour-program__description {
@@ -44,43 +44,38 @@
     left: 2.5rem;
 } 
 
-/*even tour-programs*/
-.tour-program:nth-child(even) .tour-program__description {
+/*odd tour-programs*/
+.tour-program:nth-child(odd) .tour-program__description {
     align-items: flex-end;
     margin-left: auto;
 }
 
-.tour-program:nth-child(even) .tour-program__title,
-.tour-program:nth-child(even) .tour-program__text {
+.tour-program:nth-child(odd) .tour-program__title,
+.tour-program:nth-child(odd) .tour-program__text {
     text-align: right;
 }
 
-.tour-program:nth-child(even) .tour-program__title::before {
-    content: none;
+.tour-program:nth-child(odd) .tour-program__title {
+    flex-direction: row-reverse;
 }
 
-.tour-program:nth-child(even) .tour-program__title::after {
-    content: url('../assets/icons/place-marker.svg');
-    margin-left: 1.5rem;
-}
-
-.tour-program:nth-child(even) .tour-program__slider-container {
+.tour-program:nth-child(odd) .tour-program__slider-container {
     left: 0;
 }
 
-.tour-program:nth-child(even) .tour-program__slider {
+.tour-program:nth-child(odd) .tour-program__slider {
     margin-left: auto;
 }
 
-.tour-program:nth-child(even) .coverflow-slider__btn {
+.tour-program:nth-child(odd) .coverflow-slider__btn {
     left: auto;
 }
 
-.tour-program:nth-child(even) .coverflow-slider__btn_next {
+.tour-program:nth-child(odd) .coverflow-slider__btn_next {
     right: 0;
 }
 
-.tour-program:nth-child(even) .coverflow-slider__btn_prev {
+.tour-program:nth-child(odd) .coverflow-slider__btn_prev {
     right: 2.5rem;
 }
 
@@ -93,7 +88,7 @@
         margin-left: 1.5rem;
     }
 
-    .tour-program:nth-child(even) .tour-program__slider-container {
+    .tour-program:nth-child(odd) .tour-program__slider-container {
         margin-right: 1.5rem;
     }
 
@@ -112,4 +107,20 @@
         height: 240px;
         width: 280px;
     }
+}
+
+.tour-programs-container {
+    position: relative;
+}
+
+.svg-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #4647463b;
+}
+
+.svg-container__svg {
+    height: 100%;
+    width: 100%;
 }
