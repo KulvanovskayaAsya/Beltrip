@@ -119,7 +119,6 @@
     width: 100%;
 }
 
-.svg-container__svg {
-    height: 100%;
+.svg-container svg {
     width: 100%;
 }
