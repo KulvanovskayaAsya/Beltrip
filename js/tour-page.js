@@ -72,7 +72,7 @@ let topSvgContainer = $('.svg-container').offset().top;
 let tourPrograms = $('.tour-program');
 
 tourPrograms.each(function(index) {
-    if(index%2 == 0) {
+    if(index == 0) {
         console.log("Номер итерации = ", index)
         drawRouteLine($(this), $(this).next());
     }
