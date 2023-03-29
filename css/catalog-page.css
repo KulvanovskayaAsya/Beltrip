@@ -67,10 +67,6 @@
     width: 100%;
 }
 
-.form__field_calendar {
-    flex-grow: 1;
-}
-
 .selectMultiple>div,
 .form__field_calendar,
 .selectMultiple>ul li {
