@@ -138,3 +138,9 @@
         display: block;
     }
 }
+
+@media (max-width: 450px) {
+    .filter {
+        padding: 1.5rem;
+    }
+}
