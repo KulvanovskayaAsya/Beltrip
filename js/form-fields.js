@@ -85,6 +85,7 @@ $(function (){
         let self = $(this);
         self.removeClass().addClass('remove');
         select.addClass('open');
+
         setTimeout(function() {
             self.addClass('disappear');
             setTimeout(function() {
@@ -95,6 +96,9 @@ $(function (){
                     margin: 0
                 }, 100, function() {
                     let li = $('<li />').text(self.children('em').text()).addClass('notShown').appendTo(select.find('ul'));
+                    if($('.selectMultiple > div a').length == 1) {
+                        select.removeClass('active');
+                    }
                     li.slideDown(400, function() {
                         li.addClass('show');
                         setTimeout(function() {
