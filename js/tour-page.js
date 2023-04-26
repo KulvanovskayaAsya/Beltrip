@@ -65,125 +65,83 @@ $(function() {
             prevEl: '.coverflow-slider__btn_prev',
         }
     });
+   
+    createRouteSVG();
 });
 
-let svgContainer = $('.svg-container');
-let topSvgContainer = $('.svg-container').offset().top;
 let tourPrograms = $('.tour-program');
 
-tourPrograms.each(function(index) {
-    if(index == 0) {
-        console.log("Номер итерации = ", index)
-        drawRouteLine($(this), $(this).next());
-    }
+$(window).resize(function() {
+    $(".route-line path").attr('d', '')
+    createRouteSVG();
 });
 
-// $(window).resize(function() {
-//     tourPrograms.each(function(index) {
-//         if(index < tourPrograms.length - 1) {
-//             drawRouteLine($(this), $(this).next());
-//         }
-//     });
-// })
+function createRouteSVG() {
+    let routeLineCoordinates = [];
 
-function drawRouteLine(startEl, endEl) {
-    let blockHeight = startEl.height();
-    let blockWidth = startEl.width();
+    tourPrograms.each(function(index) {
+        getRoutePoints($(this), index, routeLineCoordinates);
+    });
+    
+    drawRouteLine(routeLineCoordinates);
+}
 
-    let startElHeading = startEl.find('.tour-program__title');
-    let endElHeading = endEl.find('.tour-program__title');
+function getRoutePoints(tourProgram, index, coordinates) {
+    let topSvgContainer = $('.route-line').offset().top,
+        blockHeight = $(tourProgram).height(),
+        blockWidth = $(tourProgram).width(),
+        elHeading = $(tourProgram).find('.tour-program__title'),
+        x, y;
 
-    let x1 = startElHeading.offset().left + 16;
-    let y1 = startElHeading.offset().top + (startElHeading.height()/2) - topSvgContainer;
+    if(index % 2 != 0) { //right blocks
+        x = elHeading.offset().left + elHeading.width() - 16;
+        y = elHeading.offset().top + (elHeading.height() / 2) - topSvgContainer;
+        
+        coordinates.push(
+            { x: x, y: y - elHeading.outerHeight() - 20 }
+        )
+    } else { //left blocks
+        x = elHeading.offset().left + 16;
+        y = elHeading.offset().top + (elHeading.height() / 2) - topSvgContainer;
 
-    let x2 = endElHeading.offset().left + endElHeading.width() - 16;
-    let y2 = endElHeading.offset().top + (endElHeading.height()/2) - topSvgContainer;
+        if(index != 0) {
+            coordinates.push(
+                { x: x + 60, y: y - elHeading.height() - 60 }
+            )
+        }
+    }
 
-    console.log("y1 = ", y1, ". y2 = ", y2)
+    coordinates.push(
+        { x: x, y: y }
+    )
 
-    let svgHeight = y2;
+    if(index % 2 == 0 && index < tourPrograms.length - 1) { //left blocks
+        coordinates.push(
+            { x: x - 100, y: y + 80 },
+            { x: x - 120, y: y + blockHeight / 2 },
+            { x: x - 40, y: y + blockHeight },
+            { x: x + blockWidth / 4, y: y + blockHeight - 40 },
+            { x: x + blockWidth / 2, y: y + blockHeight },
+        )
+    } else if (index % 2 != 0 && index != tourPrograms.length - 1) { //right blocks
+        coordinates.push(
+            { x: x + 120, y: y + blockHeight / 3 },
+            { x: x + 40, y: y + blockHeight / 2 },
+            { x: x + 40, y: y + blockHeight},
+        )
+    }
+}
 
-    var data = [
-        {x: x1, y: y1},
-        {x: x1 - 120, y: y1 + 80},
-        {x: x1 - 120, y: y1 + blockHeight/2},
-        {x: x1 - 40, y: y1 + blockHeight},
-        {x: blockWidth/3, y: blockHeight + 40},
-        {x: blockWidth/2, y: blockHeight + 120},
-        {x: blockWidth/2 + 200, y: y2 - endElHeading.height() - 20},
-        {x: x2 - 40, y: y2 - endElHeading.height() + 20},
-        {x: x2, y: y2}
-    ]
-    var svg = d3.select(".svg-container").append("svg").attr('height', svgHeight);
-
-    var curveFunc = d3.line()
-    .curve(d3.curveCardinal)
+function drawRouteLine(coordinates) {
+    let curveFunc = d3.line()
+    .curve(d3.curveCardinal) //curveCardinal curveLinear
     .x(function(d) { return d.x })
     .y(function(d) { return d.y })
 
-    svg.append('path')
-       .attr('d', curveFunc(data))
+    d3.select(".route-line path")
+       .attr('d', curveFunc(coordinates))
        .attr('stroke', '#333333')
        .attr('fill', 'none')
-       .attr('stroke-width', '2')
+       .attr('stroke-width', '1')
        .attr('stroke-dasharray', '16 16');
 }
-
-// function drawSVGLTR(currentTourProgram, svg, startEl, endEl) {
-//     // $("#mySVG").clone().addClass("clone").insertAfter(svg);
-//     let tourProgramHeight = currentTourProgram.height();
-//     let tourProgramWidth = currentTourProgram.width();
-
-//     //From left to right
-//     let x1 = startEl.offset().left + 16;
-//     let y1 = startEl.offset().top + (startEl.height()/2) - topSvgContainer;
-
-//     let x2 = endEl.offset().left + endEl.width() - 16;
-//     let y2 = endEl.offset().top + (endEl.height()/2) - topSvgContainer;
-
-//     let startPoint = x1 + "," + y1;
-
-//     // let secondPoint = x1 + ", " + (tourProgramHeight + y1);
-//     // let thirdPoint = (tourProgramWidth/2 - x1) + ", " + y2;
-
-//     // let endPoint = x2 + ", " + y2;
-
-//     // let temp = "M" + startPoint + " " + firstCurves + " " + secondCurves + " " + thirdCurves;
-
-//     let firstCurves = "C" + (x1 - 200) + "," + y1 + " " + (x1 - 150) + "," + (tourProgramHeight + y1) + " " + x1 + ", " + (tourProgramHeight + y1);
-//     let secondCurves = "S" + x1 + ", " + (tourProgramHeight + y1) + " " + (tourProgramWidth/4) + "," + (tourProgramHeight + y1 - 40) + " " + (tourProgramWidth/4 + 140) + "," + (tourProgramHeight + 230) + " " + (tourProgramWidth/2) + "," + y2;
-//     let thirdCurves = (tourProgramWidth/2 + 20) + "," + (y2 + 10) + " " + (tourProgramWidth/2 + 280) + "," + (y2 - 100) + " " + (x2 + 100) + "," + (y2 - 120) + " " + x2 + "," + y2;
-
-//     let temp = "M" + startPoint + " " + firstCurves + " " + secondCurves + " " + thirdCurves;
-//     $(svg).find('path').attr("d", temp)
-// }
-
-// tourPrograms.each(function(index) {
-
-    
-//     if(index%2 == 0 && index < tourPrograms.length - 1) {
-//         // drawSVGRTL($(this), $("#mySVG"), $(this).find('.tour-program__title'), $(this).next().find('.tour-program__title'));
-//     } else if (index%2 != 0 && index < tourPrograms.length - 1) {
-//         drawSVGLTR($(this), $("#mySVG"), $(this).find('.tour-program__title'), $(this).next().find('.tour-program__title'));
-//     }
-// })
-
-// $(window).resize(function() {
-//     tourPrograms.each(function(index) {
-//         if(index < 1) {
-//             drawSVG($(this), $("#mySVG"), $(this).find('.tour-program__title'), $(this).next().find('.tour-program__title'));
-//         }
-//     })
-// })
-
-    // let controlPoint1 = x1 + "," + y1;
-
-    // let controlPoint2 = x1 + "," + (y1 + blockHeight);
-    // let controlPoint3 = (blockWidth/2) + "," + y2;
-    // let controlPoint4 = (x2 + 40) + "," + (y2 - 100);
-    // let controlPoint5 = x2 + "," + y2;
-
-        // let bezierCurve = "M" + controlPoint1 + " C" + (x1 - 200) + "," + y1 + " " + (x1 - 150) + "," + (blockHeight + y1) + " " + controlPoint2
-    //     + " S" + controlPoint3 + " " + controlPoint4 + " " + controlPoint5;
-
-    // $(svg).find('path').attr("d", bezierCurve)

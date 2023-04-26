@@ -107,18 +107,23 @@
         height: 240px;
         width: 280px;
     }
+
+    .product-info__feature_route {
+        display: none;
+    }
 }
 
 .tour-programs-container {
     position: relative;
 }
 
-.svg-container {
+.route-line {
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.svg-container svg {
+.route-line svg {
+    height: 100%;
     width: 100%;
 }
