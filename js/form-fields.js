@@ -32,7 +32,11 @@ $(function (){
         "locale": "ru",
         "dateFormat": "d-m-Y",
         "position": "below left",
+        onChange: function(selectedDates, dateStr, instance) {
+            instance.element.value = dateStr.replace('—', '-');
+        }
     });
+
 
     let name = '_cities';
     createMultiSelect(name);
