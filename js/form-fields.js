@@ -32,6 +32,7 @@ $(function (){
         "locale": "ru",
         "dateFormat": "d-m-Y",
         "position": "below left",
+        "defaultDate": ["01-01-2022", "02-01-2022"]
     });
 
     let name = '_cities';
@@ -115,7 +116,15 @@ $(function (){
         }, 200);
     });
 
-    $(document).on('click', '.selectMultiple > div .arrow, .selectMultiple > div span', function(e) {
-        $(this).parent().parent().toggleClass('open');
+    $(document).on('click', '.selectMultiple > div', function(e) {
+        if(e.target.localName == 'div') {
+            $(this).parent().toggleClass('open');
+        }
     });
+
+    $(document).mouseup( function(e){
+		if (!$('.selectMultiple').is(e.target) && $('.selectMultiple').has(e.target).length === 0) {
+			$('.selectMultiple').removeClass('open');
+		}
+	});
 });

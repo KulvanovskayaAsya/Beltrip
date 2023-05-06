@@ -51,7 +51,7 @@ $(function() {
         slidesPerView: 'auto',
         centeredSlides: true,
         loop: true,
-        loopedSlides: 4,
+        loopedSlides: 2,
         grabCursor: true,
         coverflowEffect: {
             rotate: 0,
