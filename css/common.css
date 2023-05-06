@@ -1405,6 +1405,7 @@ h1 {
 }
 
 .flatpickr-day.prevMonthDay.inRange,
+.flatpickr-day.today.inRange,
 .flatpickr-day.nextMonthDay.inRange,
 .flatpickr-day.prevMonthDay.today.inRange,
 .flatpickr-day.nextMonthDay.today.inRange,
